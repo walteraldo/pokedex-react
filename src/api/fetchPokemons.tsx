@@ -1,17 +1,15 @@
-// https://unpkg.com/pokemons@1.1.0/pokemons.json
-
-import { Pokemon } from "../types/types.d";
-import { formatName } from "../utils/utils";
+import { Pokemon } from '../types/types.d';
+import { formatName } from '../utils/utils';
 
 export async function fetchPokemons(): Promise<Pokemon[]> {
   const response = await fetch(
-    "https://unpkg.com/pokemons@1.1.0/pokemons.json"
+    'https://unpkg.com/pokemons@1.1.0/pokemons.json'
   );
   if (!response.ok) {
     throw new Error(response.statusText);
   }
   const results = await response.json();
-  console.log("results", results);
+  // console.log("results", results);
   const pokemons = results.results.map((pokemon: any) => ({
     name: pokemon.name,
     id: pokemon.national_number,

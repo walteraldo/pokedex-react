@@ -1,9 +1,5 @@
 const Items = () => {
-  return (
-    <>
-      <div>Items</div>
-    </>
-  )
+  return <div>ITEMS</div>;
 };
 
 export default Items;

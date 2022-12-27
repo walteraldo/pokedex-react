@@ -1,22 +1,23 @@
-import styles from './footer.module.css';
+import styles from "./header.module.css";
+// Need a plugin for typescript to use module css
 
 type HeaderProps = {
-  query: string,
+  query: string;
   setQuery: (query: string) => void;
-}
+};
 
-const Header = ({query, setQuery}: HeaderProps) => {
+const Header = ({ query, setQuery }: HeaderProps) => {
   return (
-    <header className={styles.header} >
-      <input 
+    <header className={styles.header}>
+      <input
         className={styles.input}
-        type='text'
-        placeholder='Search a Pokemon'
         value={query}
-        onChange={event => setQuery(event.target.value)}
+        placeholder="Busca un Pokemon"
+        onChange={(event) => setQuery(event.target.value.trim())}
+        type="text"
       />
     </header>
-  )
-}
+  );
+};
 
 export default Header;
